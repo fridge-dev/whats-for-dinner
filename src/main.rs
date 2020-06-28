@@ -1,7 +1,7 @@
-use whats_for_dinner::{suggest_meal, MealInfo};
 use std::error::Error;
+use whats_for_dinner::{suggest_meal, MealInfo};
 
-fn main() -> Result<(), Box<dyn Error>>{
+fn main() -> Result<(), Box<dyn Error>> {
     let meal = suggest_meal()?;
     display(meal);
 
@@ -10,7 +10,11 @@ fn main() -> Result<(), Box<dyn Error>>{
 
 fn display(meal: MealInfo) {
     println!();
-    println!("[Meal {}/{}]", meal.line_number, meal.total_lines);
-    println!("{}", meal.meal_name);
+    println!(
+        "[Meal {}/{}] {}",
+        meal.line_number,
+        meal.total_lines,
+        meal.meal_name,
+    );
     println!();
 }

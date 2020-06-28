@@ -15,7 +15,8 @@ pub fn suggest_meal() -> Result<MealInfo, Box<dyn Error>> {
     let lines = read_lines("./meals.txt")?;
 
     let random_index = rand::thread_rng().gen_range(0, lines.len());
-    let line = lines.get(random_index)
+    let line = lines
+        .get(random_index)
         .expect("index out of bounds - wtf how?")
         .to_string();
 
